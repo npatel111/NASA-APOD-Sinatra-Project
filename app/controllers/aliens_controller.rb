@@ -1,0 +1,3 @@
+class AliensController < ApplicationController
+
+end  
