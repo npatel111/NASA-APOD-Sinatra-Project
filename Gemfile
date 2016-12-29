@@ -16,4 +16,3 @@ gem 'thin'
 gem 'tux'
 gem 'capybara'
 gem 'byebug'
-gem 'dotenv-rails', :groups => [:development, :test]
