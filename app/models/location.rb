@@ -14,3 +14,4 @@ class Location < ActiveRecord::Base
     return JSON.parse(response)
   end
 end
+#Move into adapter folder, create a new Active Record thing for location
