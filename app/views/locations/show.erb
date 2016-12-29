@@ -1,0 +1,9 @@
+<%=@location.date_traveled%><br>
+<%=@location.explanation%><br><br>
+<%=@location.title%><br>
+<img src="<%=@location.url%>" alt="@location.title" >
+<a href="/locations/<%=@location.id%>/edit">Edit</a>
+<form method="post" action="/locations/<%=@location.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

@@ -1,0 +1,7 @@
+Edit a location:
+<br>
+<form action="/locations/<%=@location.id%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Date you traveled: <input type="text" name="date" value="<%=@location.date_traveled%>"/>
+  <input type="submit" value="submit" />
+</form>

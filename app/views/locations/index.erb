@@ -1,6 +1,12 @@
 Hello! Below are images of the locations you have visited. If you would like to edit alien info, feel free.
 <br>To add a new location, go <a href="/locations/new">here</a>
-
+<br><br>
+Previously visited places:<br>
 <%@locations.each do |location|%>
-  Hi!
+  <a href="/locations/<%=location.id%>">
+    <%=location.date_traveled%><br>
+    <%=location.title%><br>
+    <img src="<%=location.url%>" alt="location.title" style="width:10em"><br>
+    <br>
+  </a>
 <%end%>
