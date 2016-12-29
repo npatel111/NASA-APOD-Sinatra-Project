@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
     @api_response = Location.new.hit_api(@date)
     # byebug
     @location = Location.create(date_traveled: @date, explanation: @api_response["explanation"], title: @api_response["title"], url: @api_response["url"])
-    byebug
+    # byebug
     redirect to "/locations"
   end
 
@@ -33,6 +33,7 @@ class LocationsController < ApplicationController
   end
 
   get '/locations/:id' do
+    # byebug
     @location = Location.find(params[:id])
     erb :'locations/show'
   end
@@ -47,7 +48,5 @@ class LocationsController < ApplicationController
     @location.delete
     redirect to '/locations'
   end
-
-
 
 end

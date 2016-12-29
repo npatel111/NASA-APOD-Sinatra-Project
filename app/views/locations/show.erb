@@ -1,6 +1,11 @@
 <%=@location.date_traveled%><br>
 <%=@location.explanation%><br><br>
 <%=@location.title%><br>
+Aliens that live here:<br>
+<%@location.aliens.each do |alien|%>
+  <%=alien.name%>
+<%end%>
+<br>
 <img src="<%=@location.url%>" alt="@location.title" >
 <a href="/locations/<%=@location.id%>/edit">Edit</a>
 <form method="post" action="/locations/<%=@location.id%>/delete">
