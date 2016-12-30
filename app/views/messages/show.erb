@@ -5,7 +5,10 @@ Alien Id: <%=@message.alien_id%>
 <br>
 <%if @message.alien%>
   This message was sent by this alien:
-  <%=@message.alien.name%> from <%=@message.alien.location.title%>
+  <%=@message.alien.name%>
+    <%if @message.alien.location%>
+      from <%=@message.alien.location.title%>
+    <%end%>
 <%else%>
   The alien who sent this message doesn't exist anymore
 <%end%>

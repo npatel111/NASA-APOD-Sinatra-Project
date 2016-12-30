@@ -4,6 +4,7 @@ class AliensController < ApplicationController
   end
 
   post '/aliens' do
+    # byebug
     @alien = Alien.create(params)
     redirect to "/aliens/#{@alien.id}"
   end

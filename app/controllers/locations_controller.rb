@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
   get '/locations' do
     @locations = Location.all
     # @api_response = Location.new.hit_api
+    # byebug
     erb :'/locations/index'
   end
 

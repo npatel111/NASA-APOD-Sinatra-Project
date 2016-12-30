@@ -1,6 +1,10 @@
 Hi, please fill in the info for your alien:<br>
 <form action="/aliens" method="post">
   Alien name: <input type="text" name="name" /><br>
-  Location id: <input type="text" name="location_id" /><br>
+  Location: <br>
+  <%Location.all.each do |location|%>
+    <input type="radio" name="location_id" value="<%=location.id%>" id="<%=location.id%>"><%=location.title%></input>
+    <br>
+  <%end%>
   <input type="submit" value="submit" />
 <form>

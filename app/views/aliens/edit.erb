@@ -2,6 +2,12 @@ Hi, please fill in the info for your alien:<br>
 <form action="/aliens/<%=@alien.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   Alien name: <input type="text" name="alien[name]" value="<%=@alien.name%>"/><br>
-  Location id: <input type="text" name="alien[location_id]" value="<%=@alien.location_id%>" /><br>
+  Location:<br>
+  <%Location.all.each do |location|%>
+    <input type="radio" name="alien[location_id]" value="<%=location.id%>" id="<%=location.id%>" <%='checked' if @alien.location_id == location.id%>><%=location.title%></input>
+    <br>
+  <%end%>
+
   <input type="submit" value="submit" />
+
 <form>
