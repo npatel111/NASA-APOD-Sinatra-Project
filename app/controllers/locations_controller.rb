@@ -12,16 +12,12 @@ class LocationsController < ApplicationController
   end
 
   post '/locations' do
-    # byebug
     @date = params["date"]
-    @api_response = Location.new.hit_api(@date)
-    # byebug
-    @location = Location.create(date_traveled: @date, explanation: @api_response["explanation"], title: @api_response["title"], url: @api_response["url"])
-    # byebug
+    @location = NasaAdapter.create_location(@date)
     redirect to "/locations"
   end
 
-  post '/locations/:id' do #shouldn't this be patch? But works with post
+  post '/locations/:id' do
     @location = Location.find(params[:id])
     @date = params["date"]
     @api_response = Location.new.hit_api(@date)
