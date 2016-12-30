@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229034327) do
+ActiveRecord::Schema.define(version: 20161230223043) do
+
+  create_table "alien_powers", force: :cascade do |t|
+    t.integer "alien_id"
+    t.integer "power_id"
+  end
 
   create_table "aliens", force: :cascade do |t|
     t.string  "name"
@@ -27,6 +32,10 @@ ActiveRecord::Schema.define(version: 20161229034327) do
   create_table "messages", force: :cascade do |t|
     t.string  "content"
     t.integer "alien_id"
+  end
+
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
   end
 
 end

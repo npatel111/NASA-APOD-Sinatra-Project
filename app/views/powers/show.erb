@@ -1,0 +1,12 @@
+Power name: <%=@power.name%><br>
+Aliens with this power:<br><br>
+<%@power.aliens.each do |alien|%>
+  <%=alien.name%>: <%=alien.alien_home%><br>
+  Messages: <%=alien.show_messages%>
+  <br><br>
+<%end%>
+<a href="/powers/<%=@power.id%>/edit">Edit</a>
+<form method="post" action="/powers/<%=@power.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

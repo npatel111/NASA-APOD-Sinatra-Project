@@ -1,0 +1,9 @@
+To add a new power, go <a href="/powers/new">here</a>
+<br>
+Here is a list of all the powers:<br>
+<%@powers.each do |power| %>
+  <a href="/powers/<%=power.id%>">
+    <%=power.name%>
+    <br>
+  </a>
+<%end%>
