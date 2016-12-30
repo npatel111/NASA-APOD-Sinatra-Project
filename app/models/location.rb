@@ -13,5 +13,18 @@ class Location < ActiveRecord::Base
     response = Net::HTTP.get(@uri)
     return JSON.parse(response)
   end
+
+  def image?
+    !self.url.include?("youtube")
+  end
+
+  # def show_image_or_video
+  #   if self.url.include?("youtube")
+  #     return "<iframe width="420" height="315"
+  #     src="${self.url}">"
+  #   else
+  #     return "<img src="<${self.url}" alt="self.title" >"
+  #   end
+  # end
 end
 #Move into adapter folder, create a new Active Record thing for location
