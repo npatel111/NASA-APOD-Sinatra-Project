@@ -1,0 +1,18 @@
+Message infomation:
+Content:<%=@message.content%>
+<br>
+Alien Id: <%=@message.alien_id%>
+<br>
+<%if @message.alien%>
+  This message was sent by this alien:
+  <%=@message.alien.name%> from <%=@message.alien.location.title%>
+<%else%>
+  The alien who sent this message doesn't exist anymore
+<%end%>
+<br>
+<a href="/messages/<%=@message.id%>/edit">Edit message</a>
+
+<form method="post" action="/messages/<%=@message.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>

@@ -1,11 +1,17 @@
 <%=@location.date_traveled%><br>
 <%=@location.explanation%><br><br>
 <%=@location.title%><br>
-Aliens that live here:<br>
+Aliens that live here:<br><br>
 <%@location.aliens.each do |alien|%>
-  <%=alien.name%>
+  Alien name: <%=alien.name%><br>
+  <%alien.messages.each do |message|%>
+    Message: <%=message.content%><br>
+  <%end%>
   <br>
 <%end%>
+
+
+
 <br>
 <img src="<%=@location.url%>" alt="<%=@location.title%>" >
 <a href="/locations/<%=@location.id%>/edit">Edit</a>

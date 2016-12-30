@@ -1,0 +1,11 @@
+This is the messages index. <br>
+Want to <a href="/messages/new">make a new message</a>?
+<br>
+<%@messages.each do |message|%>
+  <a href="/messages/<%=message.id%>">
+    Content:<%=message.content%><br>
+    Alien ID:<%=message.alien_id%>
+    <br>
+    <br>
+  </a>
+<%end%>

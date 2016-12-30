@@ -1,7 +1,11 @@
 Index of all aliens:
 <br>
+
 <%@aliens.each do |alien|%>
-  Name: <%=alien.name%><br>
-  Location id: <%=alien.location_id%><br>
-  
+  <a href="/aliens/<%=alien.id%>">
+    Name: <%=alien.name%><br>
+    Location id: <%=alien.location_id%><br>
+    <br>
+  </a>
+
 <%end%>
