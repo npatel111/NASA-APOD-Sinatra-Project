@@ -14,6 +14,7 @@ Messages from those aliens: <%=@location.list_messages%>
 <%end%>
 
 <a href="/locations/<%=@location.id%>/edit">Edit</a>
+
 <form method="post" action="/locations/<%=@location.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">

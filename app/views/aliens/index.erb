@@ -1,10 +1,13 @@
-Index of all aliens:
+We have indexed <%=Alien.count%> aliens!
 <br>
 
 <%@aliens.each do |alien|%>
+  <br><br>
   <a href="/aliens/<%=alien.id%>">
     Name: <%=alien.name%><br>
     Location id: <%=alien.location_id%><br>
+    Image: <img src="<%=alien.picture%>" alt="alien.picture" />
+    <br>
     <br>
   </a>
 

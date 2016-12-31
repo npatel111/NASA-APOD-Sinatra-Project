@@ -1,9 +1,9 @@
 Make a new message:<br>
 <form method="post" action="/messages">
-  Content: <input type="text" name="content" /><br>
+  Content: <input type="text" name="content" required/><br>
 Which alien is this coming from?<br>
   <%Alien.all.each do |alien|%>
-    <input type="radio" name="alien_id" value="<%=alien.id%>" id="<%=alien.id%>"><%=alien.name%></input>
+    <input type="radio" name="alien_id" value="<%=alien.id%>" id="<%=alien.id%>" required><%=alien.name%></input>
     <br>
   <%end%>
 

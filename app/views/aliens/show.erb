@@ -1,33 +1,12 @@
 Hi this is the alien show page<br>
-Alien name:<%=@alien.name%><br>
-Alien powers:<br>
- <%if @alien.powers.length > 0%>
-    <%@alien.powers.each do |power| %>
-      <%=power.name%>
-      <br>
-    <%end%>
-  <%else%>
-    This alien has no powers yet
-  <%end%>
 
-<br>
+Alien name: <%=@alien.name%><br>
+Alien powers: <%=@alien.show_powers%><br>
 Location ID: <%=@alien.location_id%><br>
-<%if @alien.location%>
-  This alien lives in this location: <%=@alien.location.title%><br>
-<%else%>
-  This location doesn't exist anymore. <br>
-<%end%>
+<%=@alien.show_location%><br>
 
-<%if !@alien.messages.empty?%>
-  This alien sends the following message(s):
-  <%@alien.messages.each do |message|%>
-    <%=message.content%>
-    <br>
-  <%end%>
-<%else%>
-  This alien hasn't sent any messages.
-<%end%>
-
+This alien sends the following message(s): <%=@alien.show_messages%><br>
+<img src="<%=@alien.picture%>" >
 <form method="post" action="/aliens/<%=@alien.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="delete">
