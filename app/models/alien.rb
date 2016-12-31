@@ -21,5 +21,16 @@ class Alien < ActiveRecord::Base
       "No messages yet"
     end
   end
-  
+
+  def show_powers
+    # byebug
+    if self.powers.length > 0
+      self.powers.map do |power|
+        power.name
+      end
+    else
+      "This alien has no powers yet"
+    end
+  end
+
 end

@@ -1,5 +1,16 @@
-Hi this is the alien show page
+Hi this is the alien show page<br>
 Alien name:<%=@alien.name%><br>
+Alien powers:<br>
+ <%if @alien.powers.length > 0%>
+    <%@alien.powers.each do |power| %>
+      <%=power.name%>
+      <br>
+    <%end%>
+  <%else%>
+    This alien has no powers yet
+  <%end%>
+
+<br>
 Location ID: <%=@alien.location_id%><br>
 <%if @alien.location%>
   This alien lives in this location: <%=@alien.location.title%><br>

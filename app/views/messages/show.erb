@@ -12,6 +12,7 @@ Alien Id: <%=@message.alien_id%>
 <%else%>
   The alien who sent this message doesn't exist anymore
 <%end%>
+The alien who sent this has a power of: <%=@message.alien.show_powers%>
 <br>
 <a href="/messages/<%=@message.id%>/edit">Edit message</a>
 

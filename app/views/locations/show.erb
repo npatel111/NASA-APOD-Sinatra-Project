@@ -1,14 +1,9 @@
 <%=@location.date_traveled%><br>
 <%=@location.explanation%><br><br>
 <%=@location.title%><br>
-Aliens that live here:<br><br>
-<%@location.aliens.each do |alien|%>
-  Alien name: <%=alien.name%><br>
-  <%alien.messages.each do |message|%>
-    Message: <%=message.content%><br>
-  <%end%>
-  <br>
-<%end%>
+Aliens that live here: <%=@location.aliens_here%><br>
+Messages from those aliens: <%=@location.list_messages%>
+
 
 <br>
 <%if @location.url.include?("youtube")%>
