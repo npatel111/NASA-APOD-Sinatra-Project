@@ -1,5 +1,8 @@
 To add a new power, go <a href="/powers/new">here</a>
 <br>
+So far <%=Power.count%> powers have been recorded.
+The average alient has <%=Power.average_num_of_powers%> powers.<br>
+The most common power is <%=Power.most_common_power%><br>
 Here is a list of all the powers:<br>
 <%@powers.each do |power| %>
   <a href="/powers/<%=power.id%>">

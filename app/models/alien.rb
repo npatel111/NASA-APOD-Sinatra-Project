@@ -8,8 +8,18 @@ class Alien < ActiveRecord::Base
     "https://robohash.org/#{self.name}?set=any"
   end
 
+  def self.most_powerful_alien
+    self.all.max_by {|alien| alien.get_list_of_powers.count}
+  end
+
   def self.count
     self.all.length
+  end
+
+  def self.list_of_alien_locations
+    Alien.all.map do |alien|
+      alien.location.title if alien.location
+    end
   end
 
   def alien_home
@@ -38,11 +48,15 @@ class Alien < ActiveRecord::Base
     end
   end
 
+  def get_list_of_powers
+    self.powers.map do |power|
+      power.name
+    end
+  end
+
   def show_powers
     if self.powers.length > 0
-      self.powers.map do |power|
-        power.name
-      end.join(", ")
+      self.get_list_of_powers.join(", ")
     else
       "This alien has no powers yet"
     end

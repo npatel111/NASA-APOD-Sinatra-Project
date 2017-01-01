@@ -1,4 +1,7 @@
 This is the messages index. <br>
+The first alien message recorded was: <%=Message.first_message_ever%><br>
+<%=Message.location_with_most_messages%> has the most messages.
+
 Want to <a href="/messages/new">make a new message</a>?
 <br>
 <%@messages.each do |message|%>
