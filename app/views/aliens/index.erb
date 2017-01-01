@@ -1,6 +1,5 @@
 We have indexed <%=Alien.count%> aliens!
-The most powerful alient is <%=Alien.most_powerful_alien%>
-<br>
+The most powerful alien is <%=Alien.most_powerful_alien%><br>
 
 <%@aliens.each do |alien|%>
   <br><br>
@@ -8,8 +7,7 @@ The most powerful alient is <%=Alien.most_powerful_alien%>
     Name: <%=alien.name%><br>
     Location id: <%=alien.location_id%><br>
     Image: <img src="<%=alien.picture%>" alt="alien.picture" />
-    <br>
-    <br>
+    <br><br>
   </a>
 
 <%end%>

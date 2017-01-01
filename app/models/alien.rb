@@ -40,9 +40,7 @@ class Alien < ActiveRecord::Base
 
   def show_messages
     if self.messages.length > 0
-      self.messages.map do |message|
-        message.content
-      end.join(", ")
+      self.messages.map {|message| message.content }.join(", ")
     else
       "No messages yet"
     end

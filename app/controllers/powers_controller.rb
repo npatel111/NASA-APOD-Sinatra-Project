@@ -1,9 +1,7 @@
 class PowersController < ApplicationController
 
   get '/powers' do
-    # @power = Power.create(name: "speed", alien_ids:["1", "4", "11"])
     @powers = Power.all
-    # byebug
     erb :'/powers/index'
   end
 

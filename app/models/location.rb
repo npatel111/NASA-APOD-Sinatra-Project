@@ -1,5 +1,3 @@
-require 'net/http'
-require 'json'
 class Location < ActiveRecord::Base
   has_many :aliens
   attr_accessor :date, :uri, :api_response
