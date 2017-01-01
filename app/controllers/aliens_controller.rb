@@ -4,14 +4,12 @@ class AliensController < ApplicationController
   end
 
   post '/aliens' do
-    # byebug
     @alien = Alien.create(params)
     redirect to "/aliens/#{@alien.id}"
   end
 
   get '/aliens/:id' do
     @alien = Alien.find(params[:id])
-    # byebug
     erb :'/aliens/show'
   end
 
@@ -27,7 +25,6 @@ class AliensController < ApplicationController
   end
 
   get '/aliens' do
-    # byebug
     @aliens = Alien.all
     erb :'/aliens/index'
   end

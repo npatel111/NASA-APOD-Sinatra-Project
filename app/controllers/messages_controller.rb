@@ -14,7 +14,6 @@ class MessagesController < ApplicationController
   end
 
   get '/messages/:id' do
-    # byebug
     @message = Message.find(params[:id])
     erb :'/messages/show'
   end

@@ -2,8 +2,6 @@ class LocationsController < ApplicationController
   # API_KEY= "Uaf3MFyz2wdvAzJAocc8SHDj6Ou02OiT4E6c9vcG"
   get '/locations' do
     @locations = Location.all
-    # @api_response = Location.new.hit_api
-    # byebug
     erb :'/locations/index'
   end
 
@@ -20,12 +18,8 @@ class LocationsController < ApplicationController
   post '/locations/:id' do
     @location = Location.find(params[:id])
     @date = params["date"]
-    @api_response = Location.new.hit_api(@date)
-    @location.date_traveled = @date
-    @location.explanation = @api_response["explanation"]
-    @location.title = @api_response["title"]
-    @location.url = @api_response["url"]
-    @location.save
+    @new_params = NasaAdapter.update_location(@date)
+    @location.update(@new_params)
     redirect to "/locations/#{@location.id}"
   end
 

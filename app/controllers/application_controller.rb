@@ -5,7 +5,6 @@ class ApplicationController < Sinatra::Base
   set :views, Proc.new { File.join(root, "../views/") }
 
   get '/' do
-    # byebug
     erb :root
   end
 
